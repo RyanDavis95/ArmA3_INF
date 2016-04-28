@@ -19,6 +19,8 @@ class cfgFunctions
                         class forceSprint {};
                         class createZombie {};
                         class BloodEffects {};
+                        class ActionJump {};
+                        class KeyHandler {};
             };
     };
 };

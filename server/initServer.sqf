@@ -1,5 +1,4 @@
-{
-          
+{          
        if (side _x == West) then {
            //_x call INF_fnc_createSurvivor;
            
