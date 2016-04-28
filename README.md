@@ -1,1 +1,3 @@
-"# ArmA3_INF" 
+"Brainstorming Ideas" 
+
+- Ryan Davis
