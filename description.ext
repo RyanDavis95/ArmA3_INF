@@ -1,0 +1,24 @@
+author = "Ryan Davis";
+
+enableTeamSwitch = 0;
+respawnDelay = 2;
+enableDebugConsole=2;
+disabledAI = 0;
+enableItemsDropping = 0;
+
+class cfgFunctions
+{
+	class INF{
+    
+            class functions{
+            
+                        file = "client\core\functions";
+                        class removeGear {};
+                        class handleZomDamage {};
+                        class spawnThunderbolt {};
+                        class forceSprint {};
+                        class createZombie {};
+                        class BloodEffects {};
+            };
+    };
+};
