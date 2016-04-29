@@ -1,1 +1,7 @@
 - change radio to event handlers
+
+-Respawning
+
+EH added to unit
+1. unit asks for coordinates
+2. server gets request via variable

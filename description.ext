@@ -5,35 +5,22 @@ respawnDelay = 2;
 enableDebugConsole=2;
 disabledAI = 0;
 enableItemsDropping = 0;
+corpseLimit = 64;
+
+class Header
+{
+	gameType = TDM;
+	minPlayers = 1;
+	maxPlayers = 48;
+};
+
+
+#include "Config_Master.hpp"
+#include "Config_RemoteExec.hpp"
 
 class cfgFunctions
 {
-	class INF{
-    
-            class functions{
-            
-                        file = "client\core\functions";
-                        class removeGear {};
-                        class handleZomDamage {};
-                        class spawnThunderbolt {};
-                        class forceSprint {};
-                        class createZombie {};
-                        class BloodEffects {};
-                        class ActionJump {};
-                        class findRespawnPoint {};
-            };
-    };
-    
-    class MPINF{
-    
-            class functions{
-                        file = "server\core\functions";
-                        
-            
-            
-            };
-    
-    };
+	#include "Config_Functions.hpp"
 };
 
 class CfgRemoteExec
