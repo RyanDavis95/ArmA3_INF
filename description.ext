@@ -20,7 +20,67 @@ class cfgFunctions
                         class createZombie {};
                         class BloodEffects {};
                         class ActionJump {};
-                        class KeyHandler {};
+                        class findRespawnPoint {};
             };
     };
+    
+    class MPINF{
+    
+            class functions{
+                        file = "server\core\functions";
+                        
+            
+            
+            };
+    
+    };
+};
+
+class CfgRemoteExec
+{        
+       
+       class Functions
+       {
+               
+               mode = 1;
+               jip = 1;
+
+               class MPINF_fnc_findRespawnPoint {allowedTargets=0;};
+
+       };        
+       // List of script commands allowed to be sent from client via remoteExec
+       class Commands
+       {
+              /*your commands here*/
+              //class YourCommand1 { allowedTargets=0; jip=0; };
+	};
+};
+
+class CfgMusic
+{
+    tracks[] = {};
+    class ambience0
+    {
+        name = "ambience0";
+        sound[] = {"\resources\music\ambience0.ogg", db+0, 1.0};
+    };
+    
+    class ambience1
+    {
+        name = "ambience1";
+        sound[] = {"\resources\music\ambience1.ogg", db+0, 1.0};
+    };
+    
+    class ambience2
+    {
+        name = "ambience2";
+        sound[] = {"\resources\music\ambience2.ogg", db+0, 1.0};
+    };
+    
+    class ambience3
+    {
+        name = "ambience3";
+        sound[] = {"\resources\music\ambience3.ogg", db+0, 1.0};
+    };
+    
 };
