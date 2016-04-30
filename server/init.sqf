@@ -19,6 +19,7 @@ _tmpCurrentZombies = [];
                _this call INF_fnc_createZombie; 
                _this call INF_fnc_findRespawnPoint; }
            ];
+           [_x] execVM "client\core\functions\fn_trackSurvivor.sqf";
        };
           
 } forEach playableUnits;

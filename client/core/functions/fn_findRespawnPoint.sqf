@@ -68,7 +68,7 @@ while { !_found } do {
     _genPos = [_xCoord,_yCoord,_zCoord];    
     {
         _currGroupPos = _x select 0;
-        if (_genPos distance _currGroupPos < 50 && !(surfaceIsWater _genPos)) then {
+        if (_genPos distance _currGroupPos < 50 || surfaceIsWater _genPos) then {
             _found = false;
         };
     } forEach _survivorGroups;

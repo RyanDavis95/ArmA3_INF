@@ -1,20 +1,11 @@
 - change radio to event handlers
 
--Respawning
-
-EH added to unit
-1. unit asks for coordinates
-2. server gets request via variable
-
-Respawn System
-- Fix not allowing to spawn in water
+Optimize target Tracking
+- Remove lag
+- Make it more efficient
 
 
+Respawning
+- Optimize distances of spawn
+- look into more efficiency
 
-[arr1,arr3,arr4,arr5,arr6] = survivorPos
-_x = arr1
-_i = 2
-_curr = arr4
-[] = tmpGroup
-
-[[arr1,arr2],] = survivorGroups
