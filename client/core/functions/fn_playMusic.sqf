@@ -1,4 +1,4 @@
 private["_selected"];
 
-_selected = ["ambient0","ambient1","ambient2","ambient3"] call BIS_fnc_selectRandom;
+_selected = ["ambience0","ambience1","ambience2","ambience3","ambience4"] call BIS_fnc_selectRandom;
 playMusic _selected;
