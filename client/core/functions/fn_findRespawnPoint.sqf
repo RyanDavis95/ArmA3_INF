@@ -1,4 +1,4 @@
-private ["_survivors","_posFound","_survivorPositions","_survPosCount","_survivorGroups","_tmpGroup","_posFound"];
+private ["_survivors","_survivorPositions","_survPosCount","_survivorGroups","_tmpGroup"];
 
 _unit = _this select 0;
 _survivors = missionNamespace getVariable "INF_CurrentSurvivors";
@@ -7,7 +7,6 @@ _survivorPositions = [];
 _survPosCount = 0;
 _survivorGroups = [];
 _tmpGroup = [];
-_posFound = false;
 
 if (side (_unit)==west) then {
     _survivors = _survivors - [_unit];
@@ -42,7 +41,7 @@ if (side (_unit)==west) then {
 
 
 /* Spawn Distance Vars */
-private["_fract","_multiplier","_nMin","_pMin","_nMax","_pMax","_nAvg","_pAvg"];
+private["_fract","_multiplier","_nMin","_pMin","_nMax","_pMax","_nAvg","_pAvg","_posFound"];
 
 _fract = count _survivorGroups/10;
 _multiplier = 100 * _fract;
@@ -53,7 +52,7 @@ _pMax = 100;
 _nAvg = _nMin - _nMax;
 _pAvg = _pMax - _pMin;
 _genPos = [];
-
+_posFound = false;
 
 while { !_posFound } do {
 
