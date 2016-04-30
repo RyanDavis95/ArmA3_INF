@@ -11,6 +11,7 @@ class INF{
                         class BloodEffects {};
                         class ActionJump {};
                         class findRespawnPoint {};
+                        class playMusic {};
             };
 };
 class MPINF {
