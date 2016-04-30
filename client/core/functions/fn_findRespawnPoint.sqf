@@ -1,4 +1,4 @@
-private ["_survivors","_posFound","_survivorPositions","_survPosCount","_survivorGroups","_tmpGroup","_posFound","_xCoord","_yCoord","_zCoord"];
+private ["_survivors","_posFound","_survivorPositions","_survPosCount","_survivorGroups","_tmpGroup","_posFound"];
 
 _unit = _this select 0;
 _survivors = missionNamespace getVariable "INF_CurrentSurvivors";
@@ -8,9 +8,6 @@ _survPosCount = 0;
 _survivorGroups = [];
 _tmpGroup = [];
 _posFound = false;
-_xCoord = 0;
-_yCoord = 0;
-_zCoord = 0;
 
 if (side (_unit)==west) then {
     _survivors = _survivors - [_unit];
@@ -45,7 +42,7 @@ if (side (_unit)==west) then {
 
 
 /* Spawn Distance Vars */
-private["_fract","_multiplier","_nMin","_pMin","_nMax","_pMax","_nAvg","_pAvg","_genPos"];
+private["_fract","_multiplier","_nMin","_pMin","_nMax","_pMax","_nAvg","_pAvg"];
 
 _fract = count _survivorGroups/10;
 _multiplier = 100 * _fract;
@@ -58,7 +55,10 @@ _pAvg = _pMax - _pMin;
 _genPos = [];
 
 
-while { !_posFound } do {  
+while { !_posFound } do {
+
+private["_survivorPos","_lowRand","_highRand","_xRand","_yRand","_xCoord","_yCoord","_zCoord","_genPos","_currGroupPos"];
+
     _posFound = true;
     _survivorPos = _survivorGroups select (round (random ((count _survivorGroups) - 1))) select 0;
     _lowRand = random [_nMin,_nAvg,_nMax];
