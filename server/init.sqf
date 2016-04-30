@@ -6,12 +6,19 @@ _tmpCurrentZombies = [];
        if (side _x == West) then {
            //_x call INF_fnc_createSurvivor;
            _tmpCurrentSurvivors pushBack _x;
+           _x addMPEventHandler["MPRespawn",{
+               _this call INF_fnc_createZombie; 
+               _this call INF_fnc_findRespawnPoint; }
+           ];
        };   
           
        if (side _x == East) then {
            _tmpCurrentZombies pushBack _x;
            _x call INF_fnc_createZombie;
-           _x addMPEventHandler["MPRespawn",{_this call INF_fnc_createZombie; _this call INF_fnc_findRespawnPoint; }];
+           _x addMPEventHandler["MPRespawn",{
+               _this call INF_fnc_createZombie; 
+               _this call INF_fnc_findRespawnPoint; }
+           ];
        };
           
 } forEach playableUnits;

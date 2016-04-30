@@ -7,9 +7,14 @@ EH added to unit
 2. server gets request via variable
 
 Respawn System
-1. Grab everyones positions
-2. Separate those positions into multidimensional array. ex. 
-    ([[player1,player2,player3],[player4],[player5,player6]])
-3. Define spawn outer radius depending on count of items in array
-4. brute force into acceptable range
-5. check if outside boundaries of each person
+- Fix not allowing to spawn in water
+
+
+
+[arr1,arr3,arr4,arr5,arr6] = survivorPos
+_x = arr1
+_i = 2
+_curr = arr4
+[] = tmpGroup
+
+[[arr1,arr2],] = survivorGroups
