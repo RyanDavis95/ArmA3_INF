@@ -10,13 +10,3 @@ KeyHandlerFNC = {
         default {};
     };
 };
-
-if (isServer) then { //isDedicated for dedicated server
-    _handle = [] execVM "server\initServer.sqf";
-    waitUntil { isNull _handle; };
-};
-
-if (hasInterface) then {
-    _handle = [] execVM "client\initClient.sqf";
-    waitUntil { isNull _handle; };
-};

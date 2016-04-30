@@ -1,4 +1,4 @@
-private ["INF_CurrentSurvivors", "INF_CurrentZombies"];
+private ["_tmpCurrentSurvivors", "_tmpCurrentZombies"];
 _tmpCurrentSurvivors = [];
 _tmpCurrentZombies = [];
 
