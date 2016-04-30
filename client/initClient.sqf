@@ -13,6 +13,12 @@ player setVariable ["INF_MusicPlaylist", [
     ["ambience3",23]    
 ],false];
 
-[] execVM "client\core\playMusic.sqf";
+//[] execVM "client\core\playMusic.sqf";
+
+
+addMusicEventHandler ["MusicStop",{call INF_fnc_playMusic}];
+
+
+
 //[player] call INF_fnc_removeGear;
 //player addAction ["Shock", INF_fnc_spawnThunderbolt];s
