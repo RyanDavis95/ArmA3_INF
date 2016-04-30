@@ -5,3 +5,11 @@
 EH added to unit
 1. unit asks for coordinates
 2. server gets request via variable
+
+Respawn System
+1. Grab everyones positions
+2. Separate those positions into multidimensional array. ex. 
+    ([[player1,player2,player3],[player4],[player5,player6]])
+3. Define spawn outer radius depending on count of items in array
+4. brute force into acceptable range
+5. check if outside boundaries of each person

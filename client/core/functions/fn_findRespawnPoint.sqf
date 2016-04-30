@@ -44,6 +44,7 @@ _xCoord = (_survivorPos select 1) + _yRand;
 {
     if ([_xCoord,_yCoord,0] distance _x < 75) then {
         
+        _survivorPos ... getPosATL _x
     } else {
         
     };
