@@ -1,16 +1,8 @@
-private ["_survivors","_posFound","_survivorPositions", "_survPosCount"];
+private ["_survivors","_posFound","_survivorPositions","_survPosCount","_survivorGroups","_tmpGroup","_posFound","_xCoord","_yCoord","_zCoord"];
 
 _unit = _this select 0;
 _survivors = missionNamespace getVariable "INF_CurrentSurvivors";
 _zombies = missionNamespace getVariable "INF_CurrentZombies";
-
-if (side (_unit)==west) then {
-    _survivors = _survivors - [_unit];
-    missionNamespace setVariable ["INF_CurrentSurvivors",_survivors,true];
-    _zombies = _zombies + [_unit];
-    missionNamespace SetVariable ["INF_CurrentZombies",_zombies,true];
-};
-
 _survivorPositions = [];
 _survPosCount = 0;
 _survivorGroups = [];
@@ -18,7 +10,14 @@ _tmpGroup = [];
 _posFound = false;
 _xCoord = 0;
 _yCoord = 0;
-_test = [];
+_zCoord = 0;
+
+if (side (_unit)==west) then {
+    _survivors = _survivors - [_unit];
+    missionNamespace setVariable ["INF_CurrentSurvivors",_survivors,true];
+    _zombies = _zombies + [_unit];
+    missionNamespace SetVariable ["INF_CurrentZombies",_zombies,true];
+};
 
 {
     _survivorPositions pushBack (getPosATL _x);
@@ -44,7 +43,11 @@ _test = [];
 
 } forEach _survivorPositions;
 
-_fract = count _survivorGroups / 10;
+
+/* Spawn Distance Vars */
+private["_fract","_multiplier","_nMin","_pMin","_nMax","_pMax","_nAvg","_pAvg","_genPos"];
+
+_fract = count _survivorGroups/10;
 _multiplier = 100 * _fract;
 _nMin = -100;
 _pMin = 50;
@@ -54,9 +57,9 @@ _nAvg = _nMin - _nMax;
 _pAvg = _pMax - _pMin;
 _genPos = [];
 
-_found = false;
-while { !_found } do {  
-    _found = true;
+
+while { !_posFound } do {  
+    _posFound = true;
     _survivorPos = _survivorGroups select (round (random ((count _survivorGroups) - 1))) select 0;
     _lowRand = random [_nMin,_nAvg,_nMax];
     _highRand = random[_pMin,_pAvg,_pMax];
@@ -69,7 +72,7 @@ while { !_found } do {
     {
         _currGroupPos = _x select 0;
         if (_genPos distance _currGroupPos < 50 || surfaceIsWater _genPos) then {
-            _found = false;
+            _posFound = false;
         };
     } forEach _survivorGroups;
 };
