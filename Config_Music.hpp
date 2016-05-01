@@ -1,4 +1,4 @@
-tracks[] = {ambience0,ambience1,ambience2,ambience3,pumpedUpKicks};
+tracks[] = {ambience0,ambience1,ambience2,ambience3,pumpedUpKicks,EDMTrend};
 class ambience0
 {
     name = "ambience0";
@@ -27,4 +27,10 @@ class pumpedUpKicks
 {
     name = "pumpedUpKicks";
     sound[] = {"\resources\music\pumpedUpKicks.ogg", db+0, 1.0};
+};
+
+class EDMTrend
+{
+    name = "EDMTrend"
+    sound[] = {"\resources\music\EDMTrend.ogg", db+0, 1.0};  
 };

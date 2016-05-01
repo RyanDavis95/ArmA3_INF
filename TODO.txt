@@ -28,3 +28,6 @@ Read into server sided remote script execution
 Ranks?
 Think of zom types
 More Abilities
+
+Fix the current zombies & current survivors mission namespace variables
+cuz they are fucked beyone belief??? UGH

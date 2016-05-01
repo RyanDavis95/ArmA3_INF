@@ -1,18 +1,21 @@
 private ["_survivors","_survivorPositions","_survPosCount","_survivorGroups","_tmpGroup"];
+params ["_unit"];
 
-_unit = _this select 0;
 _survivors = missionNamespace getVariable "INF_CurrentSurvivors";
 _zombies = missionNamespace getVariable "INF_CurrentZombies";
+
+hint format["%1\n%2",_survivors,_zombies];
+
 _survivorPositions = [];
 _survPosCount = 0;
 _survivorGroups = [];
 _tmpGroup = [];
 
-if (side (_unit)==west) then {
+if (side _unit == west) then {
     _survivors = _survivors - [_unit];
     missionNamespace setVariable ["INF_CurrentSurvivors",_survivors,true];
     _zombies = _zombies + [_unit];
-    missionNamespace SetVariable ["INF_CurrentZombies",_zombies,true];
+    missionNamespace setVariable ["INF_CurrentZombies",_zombies,true];
 };
 
 {
@@ -76,5 +79,5 @@ while { !_posFound } do {
         };
     } forEach _survivorGroups;
 };
-hint str _getPos;
+
 _unit setPosATL _genPos;

@@ -12,5 +12,3 @@ class INF_Settings {
     Survivor_Heal = true;
     
 };
-
-#include "Config_Weapons.hpp"

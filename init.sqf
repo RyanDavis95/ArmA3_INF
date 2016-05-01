@@ -1,22 +1,11 @@
-KeyHandlerFNC = {
-    private ["_key"];
-    _key = _this param [1,0];
+west setFriend [east, 1];
+west setFriend [independent, 1];
+west setFriend [civilian, 0];
 
-    switch (_key) do {
-        case 57: { [player] call INF_fnc_ActionJump;};
-        case 2: {[player] execVM "client\core\abilities\speedBoost.sqf"};
-        case 3: {[player] execVM "client\core\abilities\layMine.sqf"};
-        case 4: {[player] execVM "client\core\abilities\healSelf.sqf"};
-        default {};
-    };
-};
+independent setFriend [west, 1];
+independent setFriend [east, 1];
+independent setFriend [civilian, 0];
 
-MouseHandlerFNC = {
-    private ["_control"];
-    _control = _this param [1,0];
-    switch (_control) do {
-        case 0: {[player] execVM "client\core\abilities\zombieAttack.sqf"};
-        case 1: { };
-        default { };
-    };
-};
+east setFriend [west, 1];
+east setFriend [independent, 1];
+east setFriend [civilian, 0];

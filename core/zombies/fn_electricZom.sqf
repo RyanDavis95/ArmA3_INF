@@ -1,0 +1,1 @@
+player addAction ["Shock", INF_fnc_spawnThunderbolt];

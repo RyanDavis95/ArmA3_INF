@@ -1,3 +1,0 @@
-/*
-    Something should go here
-   */
