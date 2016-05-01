@@ -1,5 +1,4 @@
 private["_unit","_selectionName","_damage","_source","_projectile","_hitPart","_tmpDmg"];
-
 _unit = _this param [0, objNull];
 _selectionName = _this param [1, ""];
 _damage = _this param [2, 0];
@@ -22,7 +21,7 @@ _handsModifier = 0;
 _legsModifier = .05;
 _overallModifier = random .05;
 
-
+/* Handle Individual hit box components */
 switch (_selectionName) do {
     case "face_hub": {_tmpDmg = (_unit getVariable "INF_faceDmg") + (_damage * _faceModifier); _unit setHitPointDamage ["hitFace", _tmpDmg]; _unit setVariable ["INF_faceDmg", _tmpDmg, false];};
     case "neck": {_tmpDmg = (_unit getVariable "INF_neckDmg") + (_damage * _neckModifier); _unit setHitPointDamage ["hitNeck", _tmpDmg]; _unit setVariable ["INF_neckDmg", _tmpDmg, false];};
@@ -46,4 +45,5 @@ _unit setHit ["body", 0.5];
 _unit setHit ["legs", 0.5];
 _unit setHit ["head", 0.5];
 
+/* Override Default damage by returning 0*/
 0

@@ -23,6 +23,10 @@ _unit removeAllEventHandlers "HandleDamage";
 _unit addEventHandler["HandleDamage",{_this call INF_fnc_HandleZomDamage; _this call INF_fnc_BloodEffects;}];    
 _unit addMPEventHandler["MPKilled",{(_this select 0) removeAllEventHandlers "HandleDamage"}];
 
+
+//waitUntil { !isNull (findDisplay 46); };
+
+
 // Blood Effects
 _unit call INF_fnc_BloodEffects;
 
@@ -34,8 +38,13 @@ _unit setAnimSpeedCoef 1.25;
 //Appearance
 _unit call INF_fnc_removeGear;
 
-//Attack
-[_unit] spawn {
+//Setup Unit Side
+_eastCenter = createCenter east;// if no other east unit exists in the mission
+_zomGroup = createGroup east;
+[_unit] joinSilent _zomGroup;//_targetGroup could be 'group player' for example
+
+//Attack Script
+  [_unit] spawn {
     private ["_unit","_Bluefor"];
     _unit = _this param [0,objNull];
     _bluefor = [];
@@ -58,6 +67,5 @@ _unit call INF_fnc_removeGear;
                 };
             }; count _bluefor == 0 || not alive _unit;
         } forEach _bluefor;   
-     };
-    
-};
+     }; 
+};  

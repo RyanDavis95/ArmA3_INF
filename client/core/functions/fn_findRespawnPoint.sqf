@@ -41,7 +41,7 @@ if (side (_unit)==west) then {
 
 
 /* Spawn Distance Vars */
-private["_fract","_multiplier","_nMin","_pMin","_nMax","_pMax","_nAvg","_pAvg","_posFound"];
+private["_fract","_multiplier","_nMin","_pMin","_nMax","_pMax","_nAvg","_pAvg","_xCoord","_yCoord","_zCoord","_genPos","_posFound"];
 
 _fract = count _survivorGroups/10;
 _multiplier = 100 * _fract;
@@ -51,13 +51,15 @@ _nMax = -50;
 _pMax = 100;
 _nAvg = _nMin - _nMax;
 _pAvg = _pMax - _pMin;
+_xCoord = 0;
+_yCoord = 0;
+_zCoord = 0;
 _genPos = [];
 _posFound = false;
 
 while { !_posFound } do {
 
-private["_survivorPos","_lowRand","_highRand","_xRand","_yRand","_xCoord","_yCoord","_zCoord","_genPos","_currGroupPos"];
-
+    private["_survivorPos","_lowRand","_highRand","_xRand","_yRand","_currGroupPos"];
     _posFound = true;
     _survivorPos = _survivorGroups select (round (random ((count _survivorGroups) - 1))) select 0;
     _lowRand = random [_nMin,_nAvg,_nMax];
@@ -66,7 +68,6 @@ private["_survivorPos","_lowRand","_highRand","_xRand","_yRand","_xCoord","_yCoo
     _yRand = [_lowRand,_highRand] call BIS_fnc_selectRandom;
     _xCoord = (_survivorPos select 0) + _xRand;
     _yCoord = (_survivorPos select 1) + _yRand;
-    _zCoord = 0;
     _genPos = [_xCoord,_yCoord,_zCoord];    
     {
         _currGroupPos = _x select 0;
@@ -75,4 +76,5 @@ private["_survivorPos","_lowRand","_highRand","_xRand","_yRand","_xCoord","_yCoo
         };
     } forEach _survivorGroups;
 };
+hint str _getPos;
 _unit setPosATL _genPos;
