@@ -20,6 +20,7 @@ class Infection_Client_Core
                         class playMusic {};
                         class keyHandler {};
                         class mouseHandler {};
+                        class getUnitTeams {};
             };
             
             class Survivors {
@@ -51,6 +52,12 @@ class Infection_Client_Core
                       class automatedAttack {};
                       class trackSurvivor {}; 
                       class forceSprint {};
+            };
+            
+            class ServerFunctions {
+                      file = "server\functions";
+                      
+              
             };
             
 };

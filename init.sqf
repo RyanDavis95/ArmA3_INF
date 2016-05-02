@@ -9,3 +9,7 @@ independent setFriend [civilian, 0];
 east setFriend [west, 1];
 east setFriend [independent, 1];
 east setFriend [civilian, 0];
+
+civilian setFriend [west, 0];
+civilian setFriend [east, 0];
+civilian setFriend [independent,0];

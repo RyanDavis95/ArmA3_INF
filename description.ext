@@ -30,6 +30,5 @@ class CfgRemoteExec
 
 class CfgMusic
 {
-
     #include "Config_Music.hpp"    
 };

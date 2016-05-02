@@ -10,6 +10,7 @@ removeAllAssignedItems _unit;
 
 _side = _unit getVariable "INF_OriginalSide";
 
+//fix for independent
 if (_side == east) then {
     _unit addUniform "U_O_GhillieSuit";
 } else {

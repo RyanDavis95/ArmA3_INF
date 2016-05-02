@@ -1,14 +1,4 @@
-Optimize target Tracking
-- Remove lag
-- Make it more efficient
-
-Respawning
-- Optimize distances of spawn
-- look into more efficiency
-
 Match Setup
-- Put all units on one side
-- Create Alpha Zombie
 - Time Limit
 - ScoreBoard
 
@@ -29,5 +19,4 @@ Ranks?
 Think of zom types
 More Abilities
 
-Fix the current zombies & current survivors mission namespace variables
-cuz they are fucked beyone belief??? UGH
+Fix units not firing on zoms

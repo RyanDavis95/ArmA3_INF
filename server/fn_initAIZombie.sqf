@@ -1,12 +1,21 @@
 params ["_unit"];
 
+//Setup Unit Side
+
+_eastCenter = createCenter east;
+_eastGroup = createGroup east;
+[_unit] joinSilent _eastGroup;
+
+_civCenter = createCenter civilian;
+_zomGroup = createGroup civilian;
+[_unit] joinSilent _zomGroup;
+
 // Update Lists
+[] call INF_fnc_getUnitTeams;
 _survivors = missionNamespace getVariable "INF_CurrentSurvivors";
 missionNamespace setVariable ["INF_CurrentSurvivors", _survivors - [_unit], true];
-
-_zombies = missionNamespace getVariable "INF_CurrentZombies";
-missionNamespace setVariable ["INF_CurrentZombies", _zombies pushBack _unit, true];
-
+_zombies = missionNamespace getVariable "INF_CurrentZombiesList";
+missionNamespace setVariable ["INF_CurrentZombiesList", _zombies pushBack _unit, true];
 
 // Damage Vars
 _unit setVariable ["INF_faceDmg",0,false];
@@ -39,11 +48,6 @@ _unit setAnimSpeedCoef 1.25;
 _unit call INF_fnc_removeGear;
 _unit call INF_fnc_BloodEffects;
 
-//Setup Unit Side
-_eastCenter = createCenter civilian;// if no other east unit exists in the mission
-_zomGroup = createGroup civilian;
-[_unit] joinSilent _zomGroup;//_targetGroup could be 'group player' for example
-
 //Attack Scripts
-[_unit] spawn INF_fnc_automatedAttack;
 [_unit] spawn INF_fnc_trackSurvivor;
+[_unit] spawn INF_fnc_automatedAttack;
