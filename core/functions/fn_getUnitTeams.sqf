@@ -3,7 +3,7 @@ _tmpCurrentSurvivors = [];
 _tmpCurrentZombies = [];
 
 {
-    if (side _x == civilian) then {          
+    if (side _x == Independent) then {          
         _tmpCurrentZombies pushBack _x;
     } else {      
         _tmpCurrentSurvivors pushBack _x;

@@ -1,14 +1,10 @@
 params ["_unit"];
 
 //Setup Unit Side
-
-_eastCenter = createCenter east;
-_eastGroup = createGroup east;
-[_unit] joinSilent _eastGroup;
-
-_civCenter = createCenter civilian;
-_zomGroup = createGroup civilian;
+_civCenter = createCenter Independent;
+_zomGroup = createGroup Independent;
 [_unit] joinSilent _zomGroup;
+
 
 // Update Lists
 [] call INF_fnc_getUnitTeams;

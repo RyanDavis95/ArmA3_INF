@@ -5,6 +5,6 @@ _unit = _this param [0,objNull];
 _unit playMove "AwopPercMstpSgthWnonDnon_throw";
 sleep 1.5;
 
-if (side cursorTarget == west && _unit distance cursorTarget < 2) then {
+if (side cursorTarget != Independent && _unit distance cursorTarget < 2) then {
     cursorTarget setDamage ((getDammage cursorTarget) + .33);
 };

@@ -1,2 +1,2 @@
 params ["_unit"];
-_unit allowFleeing 1;
+_unit setBehaviour "AWARE";

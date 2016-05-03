@@ -4,15 +4,15 @@
 switch (playerSide) do {
     
     case west: {
-            _handle = [] spawn INF_fnc_initSurvivor;
+            _handle = [player] spawn INF_fnc_initSurvivor;
             waitUntil { scriptDone _handle;};
         };
     case east: {
-            _handle = [] spawn INF_fnc_initSurvivor;
+            _handle = [player] spawn INF_fnc_initSurvivor;
             waitUntil { scriptDone _handle;};
     };
     case independent: {
-            _handle = [] spawn INF_fnc_initSurvivor;
+            _handle = [player] spawn INF_fnc_initZombie;
             waitUntil { scriptDone _handle;};
     };
     case civilian: {

@@ -1,4 +1,3 @@
-
 /* Player Controls */
 waitUntil { !isNull (findDisplay 46); };
 (findDisplay 46) displayAddEventHandler ["KeyDown", {_this call INF_fnc_keyHandler; false;}];

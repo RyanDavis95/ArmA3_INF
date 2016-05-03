@@ -1,4 +1,5 @@
-private["_unit","_selectionName","_damage","_source","_projectile","_hitPart","_tmpDmg"];
+params["_unit","_selectionName","_damage","_source","_projectile","_hitPart"];
+private["_tmpDmg"];
 _unit = _this param [0, objNull];
 _selectionName = _this param [1, ""];
 _damage = _this param [2, 0];
@@ -37,6 +38,7 @@ switch (_selectionName) do {
     case "": {_tmpDmg = (_unit getVariable "INF_overallDmg") + (_damage * _overallModifier);  _unit setDammage _tmpDmg; _unit setVariable ["INF_overallDmg",_tmpDmg,false];};
     default {};
 };
+
 
 // Keep blood effects present
 _unit setHit ["chest", 0.5];

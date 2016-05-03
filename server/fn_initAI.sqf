@@ -13,7 +13,7 @@ switch (side _unit) do {
             waitUntil { scriptDone _handle;};
     };
     case independent: {
-            _handle = [_unit] spawn INF_fnc_initAISurvivor;
+            _handle = [_unit] spawn INF_fnc_initAIZombie;
             waitUntil { scriptDone _handle;};
     };
     case civilian: {

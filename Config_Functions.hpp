@@ -27,7 +27,8 @@ class Infection_Client_Core
                         file = "core\survivors";
                         class healSelf {};
                         class layMine {};
-                        class speedBoost {};         
+                        class speedBoost {};
+                        class spawnUAV {};       
             };
             
             class Zombies {

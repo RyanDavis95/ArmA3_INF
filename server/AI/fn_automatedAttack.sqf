@@ -5,9 +5,9 @@ _players = missionNamespace getVariable "INF_currentPlayers";
 
 waitUntil { sleep 1;
     {  
-        if (side _x != civilian && alive _x && _unit distance _x < 2.5) then {
+        if (side _x != Independent && alive _x && _unit distance _x < 2.5) then {
             _unit playMove "AwopPercMstpSgthWnonDnon_throw";
-            sleep 1.5;
+            sleep 2;
             if (vehicleVarName _unit == _alpha) then {
                 _x setDammage 1;
             } else {
