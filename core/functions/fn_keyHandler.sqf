@@ -10,4 +10,10 @@ if (side player != Independent) then {
         case 57: {[player] spawn INF_fnc_ActionJump};
         default {};
         };    
+} else {
+    //Zombie Abilities
+    switch (_key) do {
+        case 2: {[player] spawn INF_fnc_spawnThunderbolt};
+        default { };
+    };  
 };

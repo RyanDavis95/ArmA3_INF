@@ -31,7 +31,7 @@ _unit setVariable ["INF_overallDmg",0,false];
 _unit removeAllEventHandlers "AnimChanged";
 _unit removeAllEventHandlers "HandleDamage";
 _unit addEventHandler ["AnimChanged", {_this call INF_fnc_ForceSprint}];
-_unit addEventHandler["HandleDamage",{_this call INF_fnc_HandleZomDamage; _this call INF_fnc_BloodEffects;}];    
+_unit addEventHandler["HandleDamage",{_this call INF_fnc_HandleZomDamage}];    
 _unit addMPEventHandler["MPKilled",{(_this select 0) removeAllEventHandlers "HandleDamage"}];
 
 // AI attributes
