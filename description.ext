@@ -16,8 +16,7 @@ class Header
 
 
 #include "Config_Master.hpp"
-#include "Config_RemoteExec.hpp"
-#include "Base_Classes.hpp"
+#include "dialog\MasterHandler.hpp"
 
 class cfgFunctions
 {
@@ -36,21 +35,5 @@ class CfgMusic
 
 
 class RscTitles{
-	class ExampleTitle
-	{    
-		idd = -1;
-		duration = 99999999999;
-		class controls
-		{
-			class PIP : RscPicture
-			{    
-				x = safeZoneX + safeZoneW - 0.6 * 3 / 4; 
-				y = safeZoneY + safeZoneH - 0.6;
-				h = 0.6;
-				w = 0.6 * 3 / 4;
-				moving = 1;
-				text = "#(argb,512,512,1)r2t(myRender,1.7)";
-			};  
-		};	
-	};
+	#include "dialog\hud_stats.hpp"
 };

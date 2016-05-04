@@ -8,3 +8,5 @@ addMusicEventHandler ["MusicStop",{[] call INF_fnc_playMusic}];
 
 /* Respawn as Zombie */
 player addMPEventHandler["MPRespawn",{_this call INF_fnc_initZombie; _this call INF_fnc_findRespawnPoint;}];
+
+addMissionEventHandler ["Draw3D",{_this call INF_fnc_hudUpdate}];

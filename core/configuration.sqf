@@ -5,4 +5,3 @@ player setVariable ["realname",profileName,true];
 /* Setup */
 player setVariable ["INF_playedMusic",[],false];
 player setVariable ["INF_OriginalSide",playerSide,false];
-

@@ -25,3 +25,6 @@ switch (playerSide) do {
 
 /* Start Background Music */
 [] call INF_fnc_playMusic;
+
+/* Setup Player HUD */
+[] call INF_fnc_hudSetup;

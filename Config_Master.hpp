@@ -11,4 +11,24 @@ class INF_Settings {
     Survivor_Sprint = true;
     Survivor_Heal = true;
     
+    ranks[] = {
+        {"Private"},
+        {"Corporal"},
+        {"Sergeant"},
+        {"Staff Sergeant"},
+        {"Technical Sergeant"},
+        {"First Sergeant"},
+        {"Master Sergeant"},
+        {"Second Lieutenant"},
+        {"First Lieutenant"},
+        {"Captain"},
+        {"Major"},
+        {"Lieutenant Colonel"},
+        {"Colonel"},
+        {"Brigadier General"},
+        {"Major General"},
+        {"Lieutenant General"},
+        {"General"},
+        {"General of the Army"}
+    };
 };

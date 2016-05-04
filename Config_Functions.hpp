@@ -21,6 +21,8 @@ class Infection_Client_Core
                         class keyHandler {};
                         class mouseHandler {};
                         class getUnitTeams {};
+                        class hudSetup {};
+                        class hudUpdate {};
             };
             
             class Survivors {
