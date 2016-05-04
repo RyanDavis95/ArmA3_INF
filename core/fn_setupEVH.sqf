@@ -1,7 +1,7 @@
 /* Player Controls */
 waitUntil { !isNull (findDisplay 46); };
-(findDisplay 46) displayAddEventHandler ["KeyDown", {_this call INF_fnc_keyHandler; false;}];
-(findDisplay 46) displayAddEventHandler ["MouseButtonDown", {_this call INF_fnc_mouseHandler; false;}];
+(findDisplay 46) displayAddEventHandler ["KeyDown", {_this call INF_fnc_keyHandler;}];
+(findDisplay 46) displayAddEventHandler ["MouseButtonDown", {_this call INF_fnc_mouseHandler; true;}];
 
 /* Background Music */
 addMusicEventHandler ["MusicStop",{[] call INF_fnc_playMusic}];
