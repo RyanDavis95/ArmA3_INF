@@ -1,6 +1,5 @@
 params ["_unit"];
 
-
 /* Setup */
 _unit setVariable ["INF_OriginalSide",side _unit,false];
 

@@ -16,7 +16,8 @@ switch (playerSide) do {
             waitUntil { scriptDone _handle;};
     };
     case civilian: {
-            hint "Something should go here for JIP";
+            _handle = [player] spawn INF_fnc_initSurvivor;
+            waitUntil { scriptDone _handle;};
     };
 };
 

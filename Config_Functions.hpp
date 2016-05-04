@@ -30,7 +30,8 @@ class Infection_Client_Core
                         class healSelf {};
                         class layMine {};
                         class speedBoost {};
-                        class spawnUAV {};       
+                        class spawnUAV {};
+                        class handleSurvDamage {};     
             };
             
             class Zombies {

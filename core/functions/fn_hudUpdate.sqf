@@ -13,9 +13,10 @@ if (_currPos != _pastPos) then {
     if (_currPos >= 1) then {
         _currPos = _currPos mod 1;
         /* Update Rank Display */
-        hint "true";
-        profileNamespace setVariable ["INF_PlayerRank", _rank + 1];
         _rankNames = getArray (missionConfigFile >> "INF_Settings" >> "Ranks");
+        profileNamespace setVariable ["INF_PlayerRank", _rank + 1];
+        _rank = profileNamespace getVariable ["INF_PlayerRank",0];
+        
         (_hudDiag displayCtrl 2200) ctrlSetText ((_rankNames select _rank select 0) +" " + profileName);
         (_hudDiag displayCtrl 2201) ctrlSetText (format ["resources\images\ranks\%1.paa",_rank]);
     };
