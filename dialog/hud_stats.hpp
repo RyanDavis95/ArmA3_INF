@@ -61,5 +61,5 @@ class playerHUD {
         y = safeZoneY + safeZoneH - (0.15 * 2/8);
         h = .145 * (1/8);
         w = .595 * ratio * (3/4); 
-    }
+    };
 };
