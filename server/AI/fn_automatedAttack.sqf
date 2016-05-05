@@ -10,13 +10,15 @@ _survivors = missionNamespace getVariable "INF_currentSurvivors";
     {
         if (side _x != Independent && alive _x && _unit distance _x < 1.5) then {
             _dir = _unit getRelDir _x;
-            _unit setDir _dir;
+            _unit setDir (_unit getDir getPosATLVisual _x);
             _unit playMove "AwopPercMstpSgthWnonDnon_throw";
-            sleep 2;
+            sleep 1.5;
             if (vehicleVarName _unit == _alpha) then {
                 _x setDammage 1;
+                sleep .5;
             } else {
                 _x setDamage ((getDammage _x) + .65);
+                sleep .5;
             };
         };
     } forEach _survivors;

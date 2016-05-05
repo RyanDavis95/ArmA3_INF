@@ -7,7 +7,7 @@ _pastPos = player getVariable ["INF_pastPos", -1];
 if (_currPos != _pastPos) then {
     
     player setVariable ["INF_pastPos", _currPos];
-    _currPos = (_currPos + .005);
+    //_currPos = (_currPos + .005);
     _rank = profileNamespace getVariable ["INF_PlayerRank",0];
     
     if (_currPos >= 1) then {

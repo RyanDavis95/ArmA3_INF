@@ -23,6 +23,7 @@ class Infection_Client_Core
                         class getUnitTeams {};
                         class hudSetup {};
                         class hudUpdate {};
+                        class animSync {};
             };
             
             class Survivors {

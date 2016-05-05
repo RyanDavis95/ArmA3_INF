@@ -28,13 +28,13 @@ if (vehicleVarName _unit == _alpha) then {
     _headModifier = .025;
     _pelvisModifier = .0;
     _abdomenModifier = .0;
-    _diaphragmModifier = .0;
-    _chestModifier = 0;
+    _diaphragmModifier = .005;
+    _chestModifier = 005;
     _bodyModifier = .005;
     _armsModifier = .0;
     _handsModifier = 0;
     _legsModifier = 0;
-    _overallModifier = random .01;
+    _overallModifier = 0;
 } else {
     _faceModifier = 0;
     _neckModifier = 0;

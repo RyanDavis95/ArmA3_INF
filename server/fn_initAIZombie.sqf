@@ -35,7 +35,12 @@ _unit addEventHandler["HandleDamage",{_this call INF_fnc_HandleZomDamage}];
 _unit addMPEventHandler["MPKilled",{(_this select 0) removeAllEventHandlers "HandleDamage"}];
 
 // AI attributes
-_unit setbehaviour "CARELESS"; 
+_unit setbehaviour "CARELESS";
+_unit disableAI "FSM";
+_unit disableAI "SUPPRESSION";
+_unit disableAI "AUTOCOMBAT";
+_unit disableAI "COVER";
+_unit setMimic "hurt";
 
 //Increased Speed
 _unit setAnimSpeedCoef 1.25;

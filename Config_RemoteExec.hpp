@@ -5,6 +5,7 @@ class Functions {
 
       class INF_fnc_findRespawnPoint {allowedTargets=0;};
       class INF_fnc_getUnitTeams {allowedTargets=0;};
+      class INF_fnc_animSync {allowedTargets=0;};
 
 };    
     
