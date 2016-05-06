@@ -25,6 +25,7 @@ class Infection_Client_Core
                         class hudUpdate {};
                         class animSync {};
                         class cleanUp {};
+                        
             };
             
             class Survivors {
@@ -42,7 +43,7 @@ class Infection_Client_Core
                         class BloodEffects {};
                         class handleZomDamage {};
                         class spawnThunderbolt {};        
-                            
+                        class glowEffect {};
             };
             
             class Server {
@@ -62,7 +63,7 @@ class Infection_Client_Core
             
             class ServerFunctions {
                       file = "server\functions";
-                      
+                      class nearestUnit {};
               
             };
             

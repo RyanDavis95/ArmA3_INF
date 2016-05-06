@@ -49,13 +49,8 @@ _unit setAnimSpeedCoef 1.25;
 //Appearance
 _unit call INF_fnc_removeGear;
 _unit call INF_fnc_BloodEffects;
+_unit call INF_fnc_glowEffect;
 _unit setMimic "hurt";
-
-_light = "#lightpoint"createVehicleLocal(getPosATLVisual _unit);
-_light setLightBrightness .25;
-_light setLightAmbient [0,.25,0];
-_light setLightColor [0,.25,0];
-_light lightAttachObject [_unit,[0,0,0.25]];
 
 //Attack Scripts
 [_unit] spawn INF_fnc_trackSurvivor;

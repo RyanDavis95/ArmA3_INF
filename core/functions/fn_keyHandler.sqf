@@ -1,6 +1,7 @@
 params ["_display","_key","_shift","_ctrl","_alt"];
 _handled = false;
 //Survivor Abilities
+hint str (side player);
 if (side player != Independent) then {
     switch (_key) do {
         case 2: {[player] spawn INF_fnc_speedBoost; _handled = true;};
@@ -14,6 +15,7 @@ if (side player != Independent) then {
     //Zombie Abilities
     switch (_key) do {
         case 2: {[player] spawn INF_fnc_spawnThunderbolt; _handled = true;};
+        case 57: {[player] spawn INF_fnc_ActionJump; _handled = true;};
         default {_handled = false;};
     };  
 };

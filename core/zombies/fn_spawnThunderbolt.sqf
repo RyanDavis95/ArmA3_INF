@@ -1,9 +1,7 @@
-private ["_unit"];
-
-_target = _this param [1, objNull];
-
+params ["_unit"];
+_target = _unit call INF_fnc_nearestUnit;
 _pos = [ position _target select 0,position _target select 1, position _target select 2];
-_target allowDamage false;
+//_target allowDamage false;
 _bolt = createvehicle ["LightningBolt",_pos,[],0,"can collide"];
 _bolt setposatl _pos;
 _bolt setdamage 1;
@@ -41,4 +39,5 @@ deletevehicle _light;
     if(_target distance _x < 3 && _x != _target) then {_x setDammage ((getDammage _x) + (random .75));};
     
 } forEach playableUnits;
-_target allowDamage true;
+
+_target setDammage 1;

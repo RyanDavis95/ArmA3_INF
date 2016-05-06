@@ -8,46 +8,46 @@ _projectile = _this param [4, ""];
 _hitPart = _this param [5, 0];
 _tmpDmg = 0;
 _alpha = missionNamespace getVariable "INF_AlphaZombie";
-_faceModifier = 0;
-_neckModifier = 0;
-_headModifier = 0;
-_pelvisModifier = 0;
-_abdomenModifier = 0;
-_diaphragmModifier = 0;
-_chestModifier = 0;
-_bodyModifier = 0;
-_armsModifier = 0;
-_handsModifier = 0;
-_legsModifier = 0;
-_overallModifier = 0;
+    _faceModifier = 0;
+    _neckModifier = 0;
+    _headModifier = 0;
+    _pelvisModifier = 0;
+    _abdomenModifier = 0;
+    _diaphragmModifier = 0;
+    _chestModifier = 0;
+    _bodyModifier = 0;
+    _armsModifier = 0;
+    _handsModifier = 0;
+    _legsModifier = 0;
+    _overallModifier = 0;
 
 // Modifiers for different hit locations
 if (vehicleVarName _unit == _alpha) then {
     _faceModifier = 0;
     _neckModifier = 0;
-    _headModifier = .025;
-    _pelvisModifier = .0;
-    _abdomenModifier = .0;
-    _diaphragmModifier = .005;
-    _chestModifier = 005;
-    _bodyModifier = .005;
-    _armsModifier = .0;
+    _headModifier = 0.025;
+    _pelvisModifier = 0;
+    _abdomenModifier = 0;
+    _diaphragmModifier = 0;
+    _chestModifier = 0;
+    _bodyModifier = 0;
+    _armsModifier = 0;
     _handsModifier = 0;
     _legsModifier = 0;
     _overallModifier = 0;
 } else {
     _faceModifier = 0;
     _neckModifier = 0;
-    _headModifier = .05;
-    _pelvisModifier = .0;
-    _abdomenModifier = .0;
-    _diaphragmModifier = .0;
+    _headModifier = 0.05;
+    _pelvisModifier = 0;
+    _abdomenModifier = 0;
+    _diaphragmModifier = 0;
     _chestModifier = 0;
-    _bodyModifier = .05;
-    _armsModifier = .0;
+    _bodyModifier = 0;
+    _armsModifier = 0;
     _handsModifier = 0;
-    _legsModifier = .05;
-    _overallModifier = random .05;
+    _legsModifier = 0;
+    _overallModifier = 0;
 };
 
 /* Handle Individual hit box components */
@@ -69,11 +69,11 @@ switch (_selectionName) do {
 
 
 // Keep blood effects present
-_unit setHit ["chest", 0.5];
-_unit setHit ["hands", 0.5];
-_unit setHit ["body", 0.5];
-_unit setHit ["legs", 0.5];
-_unit setHit ["head", 0.5];
+_unit setHit ["chest", 0.4];
+_unit setHit ["hands", 0.4];
+_unit setHit ["body", 0.4];
+_unit setHit ["legs", 0.4];
+_unit setHit ["head", 0.4];
 
 /* Override Default damage by returning 0*/
 0
