@@ -4,7 +4,7 @@ params ["_unit"];
 _civCenter = createCenter Independent;
 _zomGroup = createGroup Independent;
 [_unit] joinSilent _zomGroup;
-
+_unit call INF_fnc_cleanUp;
 
 // Update Lists
 [] call INF_fnc_getUnitTeams;
@@ -30,9 +30,10 @@ _unit setVariable ["INF_overallDmg",0,false];
 //EventHandlers
 _unit removeAllEventHandlers "AnimChanged";
 _unit removeAllEventHandlers "HandleDamage";
+_unit removeAllEventHandlers "MPKilled";
 _unit addEventHandler ["AnimChanged", {_this call INF_fnc_ForceSprint}];
-_unit addEventHandler["HandleDamage",{_this call INF_fnc_HandleZomDamage}];    
-_unit addMPEventHandler["MPKilled",{(_this select 0) removeAllEventHandlers "HandleDamage"}];
+_unit addEventHandler["HandleDamage",{_this call INF_fnc_HandleZomDamage}];
+_unit addMPEventHandler["MPKilled",{(_this select 0) removeAllEventHandlers "HandleDamage"; _this call INF_fnc_cleanUp;}];
 
 // AI attributes
 _unit setbehaviour "CARELESS";
@@ -40,7 +41,7 @@ _unit disableAI "FSM";
 _unit disableAI "SUPPRESSION";
 _unit disableAI "AUTOCOMBAT";
 _unit disableAI "COVER";
-_unit setMimic "hurt";
+
 
 //Increased Speed
 _unit setAnimSpeedCoef 1.25;
@@ -48,6 +49,13 @@ _unit setAnimSpeedCoef 1.25;
 //Appearance
 _unit call INF_fnc_removeGear;
 _unit call INF_fnc_BloodEffects;
+_unit setMimic "hurt";
+
+_light = "#lightpoint"createVehicleLocal(getPosATLVisual _unit);
+_light setLightBrightness .25;
+_light setLightAmbient [0,.25,0];
+_light setLightColor [0,.25,0];
+_light lightAttachObject [_unit,[0,0,0.25]];
 
 //Attack Scripts
 [_unit] spawn INF_fnc_trackSurvivor;

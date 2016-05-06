@@ -1,4 +1,4 @@
-tracks[] = {ambience0,ambience1,ambience2,ambience3,pumpedUpKicks,EDMTrend};
+tracks[] = {ambience0,ambience1,ambience2,ambience3}; //pumpedUpKicks,EDMTrend
 class ambience0
 {
     name = "ambience0";

@@ -24,6 +24,7 @@ class Infection_Client_Core
                         class hudSetup {};
                         class hudUpdate {};
                         class animSync {};
+                        class cleanUp {};
             };
             
             class Survivors {
