@@ -10,13 +10,13 @@ _thresh = false;
     waitUntil { sleep .001;
     if (_thresh) then {
         _curr = _curr - .001;
-        (_this select 0) setLightAmbient [0, 0,_curr];
+        (_this select 0) setLightAmbient [0, _curr,0];
         if (_curr <= _min) then {
             _thresh = false;
         };
     } else {
         _curr = _curr + .001;
-        (_this select 0) setLightAmbient [0, 0,_curr];
+        (_this select 0) setLightAmbient [0, _curr,0];
         if (_curr >= _max) then {
             _thresh = true;
         };

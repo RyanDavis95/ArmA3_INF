@@ -1,6 +1,6 @@
 params ["_unit"];
 _target = _unit call INF_fnc_nearestUnit;
-_pos = [ position _target select 0,position _target select 1, position _target select 2];
+_pos = [ position _target select 0,position _target select 1, (position _target select 2) + 1];
 //_target allowDamage false;
 _bolt = createvehicle ["LightningBolt",_pos,[],0,"can collide"];
 _bolt setposatl _pos;

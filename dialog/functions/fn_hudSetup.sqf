@@ -1,5 +1,6 @@
 "PlayerHUD" call BIS_fnc_rscLayer;
 "PlayerHUD" cutRsc ["playerHUD","PLAIN"];
+disableSerialization;
 _hudDiag = uiNamespace getVariable "playerHUD";
 
 /* Rank Settings */

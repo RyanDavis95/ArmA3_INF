@@ -18,11 +18,10 @@ class Infection_Client_Core
                         class ActionJump {};
                         class findRespawnPoint {};
                         class playMusic {};
-                        class keyHandler {};
+                        class keyDownHandler {};
+                        class KeyUpHandler {};
                         class mouseHandler {};
                         class getUnitTeams {};
-                        class hudSetup {};
-                        class hudUpdate {};
                         class animSync {};
                         class cleanUp {};
                         
@@ -65,6 +64,13 @@ class Infection_Client_Core
                       file = "server\functions";
                       class nearestUnit {};
               
+            };
+            
+            class Dialog {
+                      file = "dialog\functions";
+                      class playerStats {};
+                      class hudSetup {};
+                      class hudUpdate {};               
             };
             
 };

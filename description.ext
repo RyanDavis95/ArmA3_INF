@@ -36,4 +36,5 @@ class CfgMusic
 
 class RscTitles{
 	#include "dialog\hud_stats.hpp"
+	#include "dialog\statsInfo.hpp"
 };

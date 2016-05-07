@@ -15,9 +15,7 @@ class playerHUD {
         INF_RscBackground_Title,
         INF_RscText_Name,
         INF_RscProgress_HUDExperience,
-        INF_RscProgress_HUDHealth,
-        INF_RscPicture_HUDRank,
-        INF_RscText_HUDHealth,   
+        INF_RscPicture_HUDRank  
     };
     class INF_RscBackground_HUD : INF_RscBackground {
         x = safeZoneW + safeZoneX - 0.6 * ratio;
