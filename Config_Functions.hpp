@@ -70,7 +70,9 @@ class Infection_Client_Core
                       file = "dialog\functions";
                       class scoreBoard {};
                       class hudSetup {};
-                      class hudUpdate {};               
+                      class hudUpdate {};   
+                      class abilitiesUpdate {};  
+                      class abilityCooldown {};          
             };
             
 };

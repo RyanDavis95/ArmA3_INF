@@ -17,6 +17,7 @@ class Header
 
 #include "Config_Master.hpp"
 #include "dialog\MasterHandler.hpp"
+#include "dialog\scoreBoard.hpp"
 
 class cfgFunctions
 {
@@ -36,5 +37,5 @@ class CfgMusic
 
 class RscTitles{
 	#include "dialog\hud_stats.hpp"
-	#include "dialog\scoreBoard.hpp"
+	#include "dialog\abilities.hpp"
 };

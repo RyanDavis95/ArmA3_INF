@@ -9,7 +9,7 @@ class scoreBoard {
     fadein = 0;
     fadout = 0;
     name = "scoreBoard";
-    onLoad = "uiNamespace setVariable ['scoreBoard',_this select 0]";
+    onLoad = "uiNamespace setVariable ['scoreBoard',_this select 0];";
     objects[] = {};
     controls[] = {
         INF_ScoreBoardBackground_Background,
@@ -29,6 +29,8 @@ class scoreBoard {
         y = 0;
         h = 1;
         w = 1;
+        onLoad = "(_this select 0) ctrlAddEventHandler ['mouseZChanged',{hint 'hello'}];";
+        //onMouseZChanged = "hint 'hello'";
         //colorBackground[] = {0,0,0,0.8};
         //text = "";
     };

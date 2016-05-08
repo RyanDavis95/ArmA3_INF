@@ -3,7 +3,7 @@ _handled = false;
 
 //Universal Actions
 switch (_key) do {
-        case 15:{ false call INF_fnc_scoreBoard; _handled = true;};
+        //case 15:{ false call INF_fnc_scoreBoard; _handled = true;};
         default {_handled = false;};
 };
 

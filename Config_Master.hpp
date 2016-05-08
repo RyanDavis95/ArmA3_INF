@@ -31,4 +31,11 @@ class INF_Settings {
         {"General"},
         {"General of the Army"}
     };
+    
+    survivorAbilities[] = {
+        {"Sprint",10},
+        {"LayMine",1},
+        {"Heal",5},
+        {"UAV",5}
+    };
 };

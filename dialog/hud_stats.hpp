@@ -51,7 +51,8 @@ class playerHUD {
         x = safeZoneW + safeZoneX - (0.6 * ratio);
         y = safeZoneY + safeZoneH - 0.15;
         h = .145 * (3/4);
-        w = .595 * ratio;        
+        w = .595 * ratio; 
+        colorText[] = {1,1,1,1};       
     };
     class INF_RscProgress_HUDExperience : INF_RscProgress {
         idc = 2202;
