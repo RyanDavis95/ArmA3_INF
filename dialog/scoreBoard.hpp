@@ -29,7 +29,6 @@ class scoreBoard {
         y = 0;
         h = 1;
         w = 1;
-        onLoad = "(_this select 0) ctrlAddEventHandler ['mouseZChanged',{hint 'hello'}];";
         //onMouseZChanged = "hint 'hello'";
         //colorBackground[] = {0,0,0,0.8};
         //text = "";

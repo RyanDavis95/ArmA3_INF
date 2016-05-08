@@ -18,3 +18,19 @@ Read into server sided remote script execution
 Ranks?
 Think of zom types
 More Abilities
+
+
+
+Displays
+-RscTitle (No Input)
+    -Number on each team
+    -Ability Indicators
+    -
+
+
+-Dialog (Needs Input)
+    -ScoreBoard (Esc)
+    -Player Info
+    -Role Selection
+    -Respawn Screen
+    -Customization?
