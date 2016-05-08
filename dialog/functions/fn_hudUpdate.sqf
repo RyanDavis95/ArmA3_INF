@@ -20,5 +20,5 @@ if (_currPos != _pastPos) then {
         (_hudDiag displayCtrl 2200) ctrlSetText ((_rankNames select _rank select 0) +" " + profileName);
         (_hudDiag displayCtrl 2201) ctrlSetText (format ["resources\images\ranks\%1.paa",_rank]);
     };
-    (_hudDiag displayCtrl 2202) progressSetPosition _currPos;  
+    _xpBar progressSetPosition _currPos;  
 };

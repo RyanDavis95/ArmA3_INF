@@ -68,7 +68,7 @@ class Infection_Client_Core
             
             class Dialog {
                       file = "dialog\functions";
-                      class playerStats {};
+                      class scoreBoard {};
                       class hudSetup {};
                       class hudUpdate {};               
             };

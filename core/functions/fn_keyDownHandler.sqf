@@ -17,7 +17,7 @@ if (side player != Independent) then {
 };
 //Universal Actions
 switch (_key) do {
-        case 15:{ true call INF_fnc_playerStats; _handled = true;};
+        case 15:{ true call INF_fnc_scoreBoard; _handled = true;};
         case 57:{ [player] spawn INF_fnc_ActionJump; _handled = true;};
         default {_handled = false;};
 };

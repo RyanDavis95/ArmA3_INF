@@ -26,6 +26,9 @@
 #define CT_XSLIDER          43
 #define CT_XCOMBO           44
 #define CT_ANIMATED_TEXTURE 45
+#define CT_MENU 			46 //Arma 3 (EDEN)
+#define CT_MENU_STRIP 		47 //Arma 3 (EDEN)
+#define CT_CHECKBOX 		77 //Arma 3
 #define CT_OBJECT           80
 #define CT_OBJECT_ZOOM      81
 #define CT_OBJECT_CONTAINER 82
@@ -494,193 +497,66 @@ class RscCombo
 		1
 	};
 };
-class RscListBox
-{
-	deletable = 0;
-	fade = 0;
-	access = 0;
-	type = 5;
-	rowHeight = 0;
-	colorText[] = 
-	{
-		1,
-		1,
-		1,
-		1
-	};
-	colorDisabled[] = 
-	{
-		1,
-		1,
-		1,
-		0.25
-	};
-	colorScrollbar[] = 
-	{
-		1,
-		0,
-		0,
-		0
-	};
-	colorSelect[] = 
-	{
-		0,
-		0,
-		0,
-		1
-	};
-	colorSelect2[] = 
-	{
-		0,
-		0,
-		0,
-		1
-	};
-	colorSelectBackground[] = 
-	{
-		0.95,
-		0.95,
-		0.95,
-		1
-	};
-	colorSelectBackground2[] = 
-	{
-		1,
-		1,
-		1,
-		0.5
-	};
-	colorBackground[] = 
-	{
-		0,
-		0,
-		0,
-		0.3
-	};
-	soundSelect[] = 
-	{
-		"\A3\ui_f\data\sound\RscListbox\soundSelect",
-		0.09,
-		1
-	};
-	autoScrollSpeed = -1;
-	autoScrollDelay = 5;
-	autoScrollRewind = 0;
-	arrowEmpty = "#(argb,8,8,3)color(1,1,1,1)";
-	arrowFull = "#(argb,8,8,3)color(1,1,1,1)";
-	colorPicture[] = 
-	{
-		1,
-		1,
-		1,
-		1
-	};
-	colorPictureSelected[] = 
-	{
-		1,
-		1,
-		1,
-		1
-	};
-	colorPictureDisabled[] = 
-	{
-		1,
-		1,
-		1,
-		0.25
-	};
-	colorPictureRight[] = 
-	{
-		1,
-		1,
-		1,
-		1
-	};
-	colorPictureRightSelected[] = 
-	{
-		1,
-		1,
-		1,
-		1
-	};
-	colorPictureRightDisabled[] = 
-	{
-		1,
-		1,
-		1,
-		0.25
-	};
-	colorTextRight[] = 
-	{
-		1,
-		1,
-		1,
-		1
-	};
-	colorSelectRight[] = 
-	{
-		0,
-		0,
-		0,
-		1
-	};
-	colorSelect2Right[] = 
-	{
-		0,
-		0,
-		0,
-		1
-	};
-	tooltipColorText[] = 
-	{
-		1,
-		1,
-		1,
-		1
-	};
-	tooltipColorBox[] = 
-	{
-		1,
-		1,
-		1,
-		1
-	};
-	tooltipColorShade[] = 
-	{
-		0,
-		0,
-		0,
-		0.65
-	};
-	class ListScrollBar
-	{
-		color[] = 
+class RscListbox
 		{
-			1,
-			1,
-			1,
-			1
+			access = 0; // Control access (0 - ReadAndWrite, 1 - ReadAndCreate, 2 - ReadOnly, 3 - ReadOnlyVerified)
+			idc = CT_LISTBOX; // Control identification (without it, the control won't be displayed)
+			type = CT_LISTBOX; // Type is 5
+			style = ST_LEFT + LB_TEXTURES; // Style
+			default = 0; // Control selected by default (only one within a display can be used)
+			blinkingPeriod = 0; // Time in which control will fade out and back in. Use 0 to disable the effect.
+
+			x = 0;  // Horizontal coordinates
+			y = 0;  // Vertical coordinates
+			w = 1;  // Width
+			h = 1; // Height
+
+			colorBackground[] = {0.2,0.2,0.2,1}; // Fill color
+			colorSelectBackground[] = {1,0.5,0,1}; // Selected item fill color
+			colorSelectBackground2[] = {0,0,0,1}; // Selected item fill color (oscillates between this and colorSelectBackground)
+
+			sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)"; // Text size
+			font = "RobotoCondensed"; // Font from CfgFontFamilies
+			shadow = 0; // Shadow (0 - none, 1 - directional, color affected by colorShadow, 2 - black outline)
+			colorText[] = {1,1,1,1}; // Text and frame color
+			colorDisabled[] = {1,1,1,0.5}; // Disabled text color
+			colorSelect[] = {1,1,1,1}; // Text selection color
+			colorSelect2[] = {1,1,1,1}; // Text selection color (oscillates between this and colorSelect)
+			colorShadow[] = {0,0,0,0.5}; // Text shadow color (used only when shadow is 1)
+
+			pictureColor[] = {1,0.5,0,1}; // Picture color
+			pictureColorSelect[] = {1,1,1,1}; // Selected picture color
+			pictureColorDisabled[] = {1,1,1,0.5}; // Disabled picture color
+
+			tooltip = "CT_LISTBOX"; // Tooltip text
+			tooltipColorShade[] = {0,0,0,1}; // Tooltip background color
+			tooltipColorText[] = {1,1,1,1}; // Tooltip text color
+			tooltipColorBox[] = {1,1,1,1}; // Tooltip frame color
+
+			period = 1; // Oscillation time between colorSelect/colorSelectBackground2 and colorSelect2/colorSelectBackground when selected
+
+			rowHeight = .15; // Row height
+			itemSpacing = .005; // Height of empty space between items
+			maxHistoryDelay = 1; // Time since last keyboard type search to reset it
+			canDrag = 0; // 1 (true) to allow item dragging
+
+			soundSelect[] = {"\A3\ui_f\data\sound\RscListbox\soundSelect",0.09,1}; // Sound played when an item is selected
+
+			// Scrollbar configuration (applied only when LB_TEXTURES style is used)
+			class ListScrollBar //In older games this class is "ScrollBar"
+			{
+				width = 0; // width of ListScrollBar
+				height = .005; // height of ListScrollBar
+				scrollSpeed = 0.01; // scroll speed of ListScrollBar
+
+				arrowEmpty = "\A3\ui_f\data\gui\cfg\scrollbar\arrowEmpty_ca.paa"; // Arrow
+				arrowFull = "\A3\ui_f\data\gui\cfg\scrollbar\arrowFull_ca.paa"; // Arrow when clicked on
+				border = "\A3\ui_f\data\gui\cfg\scrollbar\border_ca.paa"; // Slider background (stretched vertically)
+				thumb = "\A3\ui_f\data\gui\cfg\scrollbar\thumb_ca.paa"; // Dragging element (stretched vertically)
+
+				color[] = {1,1,1,1}; // Scrollbar color
+			};
 		};
-		autoScrollEnabled = 1;
-	};
-	x = 0;
-	y = 0;
-	w = 0.3;
-	h = 0.3;
-	style = 16;
-	font = "RobotoCondensed";
-	sizeEx = "(((((safezoneW / safezoneH) min 1.2) / 1.2) / 25) * 1)";
-	shadow = 0;
-	colorShadow[] = 
-	{
-		0,
-		0,
-		0,
-		0.5
-	};
-	period = 1.2;
-	maxHistoryDelay = 1;
-};
 class RscButton
 {
 	deletable = 0;
