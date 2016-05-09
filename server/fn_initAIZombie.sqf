@@ -31,7 +31,7 @@ _unit setVariable ["INF_overallDmg",0,false];
 _unit removeAllEventHandlers "AnimChanged";
 _unit removeAllEventHandlers "HandleDamage";
 _unit removeAllEventHandlers "MPKilled";
-_unit addEventHandler ["AnimChanged", {_this call INF_fnc_ForceSprint}];
+//_unit addEventHandler ["AnimChanged", {_this call INF_fnc_ForceSprint}]; // Laggy currently - needs some kind of work
 _unit addEventHandler["HandleDamage",{_this call INF_fnc_HandleZomDamage}];
 _unit addMPEventHandler["MPKilled",{(_this select 0) removeAllEventHandlers "HandleDamage"; _this call INF_fnc_cleanUp;}];
 
@@ -44,7 +44,7 @@ _unit disableAI "COVER";
 
 
 //Increased Speed
-_unit setAnimSpeedCoef 1.25;
+_unit setAnimSpeedCoef 2;
 
 //Appearance
 _unit call INF_fnc_removeGear;

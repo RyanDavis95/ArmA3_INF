@@ -38,4 +38,18 @@ class INF_Settings {
         {"Heal",5},
         {"UAV",5}
     };
+    
+    zombieAbilities[] = {
+        {"Shock",30},
+        {"Poison",15},
+        {"Jump",10},
+        {"Sense",10}          
+    };
+    
+    perkPositions[] = {
+      {,},
+      {,},
+      {,},
+      {,}  
+    };
 };

@@ -29,8 +29,5 @@ class scoreBoard {
         y = 0;
         h = 1;
         w = 1;
-        //onMouseZChanged = "hint 'hello'";
-        //colorBackground[] = {0,0,0,0.8};
-        //text = "";
     };
 };

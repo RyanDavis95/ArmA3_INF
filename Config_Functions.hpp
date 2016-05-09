@@ -33,7 +33,8 @@ class Infection_Client_Core
                         class layMine {};
                         class speedBoost {};
                         class spawnUAV {};
-                        class handleSurvDamage {};     
+                        class handleSurvDamage {};
+                        class survPerkHUD {};     
             };
             
             class Zombies {
@@ -43,6 +44,7 @@ class Infection_Client_Core
                         class handleZomDamage {};
                         class spawnThunderbolt {};        
                         class glowEffect {};
+                        class zomPerkHUD {};
             };
             
             class Server {
@@ -72,7 +74,8 @@ class Infection_Client_Core
                       class hudSetup {};
                       class hudUpdate {};   
                       class abilitiesUpdate {};  
-                      class abilityCooldown {};          
+                      class abilityCooldown {};
+                      class removePerks {};       
             };
             
 };

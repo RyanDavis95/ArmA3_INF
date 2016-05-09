@@ -43,3 +43,7 @@ _unit call INF_fnc_removeGear;
 _unit call INF_fnc_BloodEffects;
 _unit call INF_fnc_glowEffect;
 _unit setMimic "hurt";
+
+/* Perks and Abilities */
+_unit call INF_fnc_removePerks;
+_unit call INF_fnc_zomPerkHUD;

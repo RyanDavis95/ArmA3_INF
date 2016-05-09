@@ -1,5 +1,6 @@
-params ["_control","_slot", "_ability"];
 disableSerialization;
+params ["_control","_slot", "_ability"];
+
 _aTime = _ability select 1; // Ability Total Time
 _svrTime = serverTIme;
 _svrTimeElp = 0;
