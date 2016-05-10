@@ -3,7 +3,7 @@ _hudDiag = uiNamespace getVariable "playerHUD";
 _xpBar = _hudDiag displayCtrl 2202;
 _currPos = progressPosition _xpBar;
 _pastPos = player getVariable ["INF_pastPos", -1];
-//hint format["%1\n%2",_currPos,_pastPos];
+
 if (_currPos != _pastPos) then {
     
     player setVariable ["INF_pastPos", _currPos];

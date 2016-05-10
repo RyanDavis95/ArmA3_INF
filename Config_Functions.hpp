@@ -24,6 +24,7 @@ class Infection_Client_Core
                         class getUnitTeams {};
                         class animSync {};
                         class cleanUp {};
+                        class generatePos {};
                         
             };
             
@@ -53,6 +54,7 @@ class Infection_Client_Core
                       class initAISurvivor {};
                       class initAIZombie {};
                       class initAlphaZombie {};
+                      
             };
             
             class AI {
@@ -65,7 +67,8 @@ class Infection_Client_Core
             class ServerFunctions {
                       file = "server\functions";
                       class nearestUnit {};
-              
+                      class getStartLoc {};
+                      class matchhandler {};
             };
             
             class Dialog {

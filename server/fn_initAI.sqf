@@ -17,7 +17,8 @@ switch (side _unit) do {
             waitUntil { scriptDone _handle;};
     };
     case civilian: {
-            hint "Something should go here for JIP";
+            _handle = [_unit] spawn INF_fnc_initAISurvivor;
+            waitUntil { scriptDone _handle;};
     };
 };
 

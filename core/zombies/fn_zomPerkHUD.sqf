@@ -9,7 +9,6 @@ INF_CurrentPerkLayers = _newArr;
 _perk1 = uiNamespace getVariable "lightningPerk";
 _titlePos = player getVariable "INF_PerkOneTitleLocation";
 _basePos = player getVariable "INF_PerkOneBaseLocation";
-hint str _titlePos;
 
 (_perk1 displayCtrl 9101) ctrlSetPosition _titlePos;
 (_perk1 displayCtrl 9101) ctrlCommit 0;

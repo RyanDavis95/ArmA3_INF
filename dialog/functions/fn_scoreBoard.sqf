@@ -5,7 +5,7 @@ _scoreBoard = uiNamespace getVariable "scoreBoard";
 
 waitUntil { !isNull _scoreBoard };
 //_eh = (_scoreBoard displayCtrl 2201) ctrlAddEventHandler ["mouseZChanged",{hint "hello";true;}];
-//hint str _eh;
+
 
 
 

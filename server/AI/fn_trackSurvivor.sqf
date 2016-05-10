@@ -3,7 +3,7 @@ private ["_unit","_nearMen","_survivors","_survivorsCount", "_target"];
 _survivors = missionNamespace getVariable "INF_CurrentSurvivors";
 _target = objNull;
 _newTarget = objNull;
-
+_time = serverTime;
 if (count _survivors > 0) then {
     _target = _unit call INF_fnc_nearestUnit;
 
@@ -13,12 +13,12 @@ if (count _survivors > 0) then {
         _unit setSpeedMode "FULL";      
 
         
-        waitUntil { sleep .1;
+        waitUntil { sleep .1; _timeDiff = serverTime - _time;
                     _survivors = missionNamespace getVariable "INF_CurrentSurvivors";  
                     if (count _survivors > 0) then {
                         _newTarget = [_unit,_survivors] call INF_fnc_nearestUnit;
                     };
-                    ((getPosATL _target) distance _targetPos) > 1 || _target != _newTarget || !alive _unit || !alive _target
+                    ((getPosATL _target) distance _targetPos) > 1 || _target != _newTarget || !alive _unit || !alive _target || _timeDiff > 1 
                   };
         if (_target != _newTarget) then {
             _target = _newTarget;

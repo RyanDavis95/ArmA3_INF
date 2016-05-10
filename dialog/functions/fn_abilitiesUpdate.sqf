@@ -39,7 +39,6 @@ switch (_abilitySlot) do {
     switch (_abilitySlot) do {
     case 1: {
         _perk1 = uiNamespace getVariable "lightningPerk";
-        hint str _perk1;
         _control = _perk1 displayCtrl 9104;
         _coolingDown = player getVariable "INF_A1CoolDown";
             if (!_coolingDown) then {         

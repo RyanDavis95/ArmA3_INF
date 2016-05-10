@@ -4,16 +4,21 @@ params ["_unit"];
 _civCenter = createCenter Independent;
 _zomGroup = createGroup Independent;
 [_unit] joinSilent _zomGroup;
-_unit call INF_fnc_cleanUp;
 
 // Update Lists
 [] call INF_fnc_getUnitTeams;
 _survivors = missionNamespace getVariable "INF_CurrentSurvivors";
-missionNamespace setVariable ["INF_CurrentSurvivors", _survivors - [_unit], true];
+_survivors = _survivors - [_unit];
+missionNamespace setVariable ["INF_CurrentSurvivors", _survivors, true];
 _zombies = missionNamespace getVariable "INF_CurrentZombiesList";
 missionNamespace setVariable ["INF_CurrentZombiesList", _zombies pushBack _unit, true];
 
-// Damage Vars
+if (count _survivors <= 0) then {
+
+    INF_StartNewMatch = true;
+    publicVariable "INF_StartNewMatch";
+} else {
+    // Damage Vars
 _unit setVariable ["INF_faceDmg",0,false];
 _unit setVariable ["INF_neckDmg",0,false];
 _unit setVariable ["INF_headDmg",0,false];
@@ -54,4 +59,5 @@ _unit setMimic "hurt";
 
 //Attack Scripts
 [_unit] spawn INF_fnc_trackSurvivor;
-[_unit] spawn INF_fnc_automatedAttack;
+[_unit] spawn INF_fnc_automatedAttack;  
+};

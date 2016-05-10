@@ -3,29 +3,24 @@ Match Setup
 - ScoreBoard
 - minimum players to start
 
-Alpha Zombie
-- Special Abilities
-- Speed Buff
-
 HUD
 - Abilities
 - Team
-- Display Scoreboard (TAB)
+- Display Friendlies (TAB)
 
 
 /* other stuff */
 Read into server sided remote script execution
-Ranks?
 Think of zom types
 More Abilities
 
 
+Last Survivor = Instakill
 
 Displays
 -RscTitle (No Input)
     -Number on each team
-    -Ability Indicators
-    -
+    -Ability Indicators (WIP)
 
 
 -Dialog (Needs Input)
@@ -34,3 +29,10 @@ Displays
     -Role Selection
     -Respawn Screen
     -Customization?
+    
+    
+Maybe change vars over to Global Variables?
+
+Ragdoll Effects
+
+Sync Animations

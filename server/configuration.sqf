@@ -1,9 +1,15 @@
-params ["_unit"];
+west setFriend [east, 1];
+west setFriend [independent, 0];
+west setFriend [civilian, 1];
 
-/* Setup */
-_unit setVariable ["INF_OriginalSide",side _unit,false];
+independent setFriend [west, 0];
+independent setFriend [east, 0];
+independent setFriend [civilian, 0];
 
-/* Abilities */
-_unit setVariable ["INF_SpeedBoosts",2,false];
-_unit setVariable ["INF_PlayerMines",2,false];
-_unit setVariable ["INF_PlayerHeals",3,false];
+east setFriend [west, 1];
+east setFriend [independent, 0];
+east setFriend [civilian, 1];
+
+civilian setFriend [west, 1];
+civilian setFriend [east, 1];
+civilian setFriend [independent,0];

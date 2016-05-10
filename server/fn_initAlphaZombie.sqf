@@ -1,3 +1,4 @@
+hint "Someone Died";
 private["_alpha"];
 
 [] call INF_fnc_getUnitTeams;

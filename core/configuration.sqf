@@ -34,6 +34,7 @@ player setVariable ["INF_A4CoolDown",false];
 
 player setVariable ["INF_playerJumping",false,false];
 INF_CurrentPerkLayers = [];
+INF_zombieAttacking = false;
 
 player setVariable ["INF_PerkOneBaseLocation",[safeZoneX + (.05 * (3/4)), safeZoneY + safeZoneH - (safeZoneH / 24 * (4/3)) - .05],false];
 player setVariable ["INF_PerkOneTitleLocation",[safeZoneX + (.05 * (3/4)),safeZoneY + safeZoneH - (safeZoneH / 24 * (4/3)) - .05 - (safeZoneH / 24 * (4/3)) * (1/4)],false];
