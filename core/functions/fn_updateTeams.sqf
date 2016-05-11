@@ -11,6 +11,7 @@ _tmpCurrentZombies = [];
            
 } forEach playableUnits;
 
+
 missionNamespace setVariable ["INF_CurrentPlayers",_tmpCurrentSurvivors + _tmpCurrentZombies,true];
 missionNamespace setVariable ["INF_CurrentSurvivors",_tmpCurrentSurvivors,true];
-missionNamespace setVariable ["INF_CurrentZombiesList",_tmpCurrentZombies,true];
+missionNamespace setVariable ["INF_CurrentZombies",_tmpCurrentZombies,true];

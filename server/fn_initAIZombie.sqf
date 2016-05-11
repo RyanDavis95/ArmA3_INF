@@ -4,20 +4,11 @@ params ["_unit"];
 _civCenter = createCenter Independent;
 _zomGroup = createGroup Independent;
 [_unit] joinSilent _zomGroup;
+[] call INF_fnc_updateTeams;
 
-// Update Lists
-[] call INF_fnc_getUnitTeams;
 _survivors = missionNamespace getVariable "INF_CurrentSurvivors";
-_survivors = _survivors - [_unit];
-missionNamespace setVariable ["INF_CurrentSurvivors", _survivors, true];
-_zombies = missionNamespace getVariable "INF_CurrentZombiesList";
-missionNamespace setVariable ["INF_CurrentZombiesList", _zombies pushBack _unit, true];
 
-if (count _survivors <= 0) then {
 
-    INF_StartNewMatch = true;
-    publicVariable "INF_StartNewMatch";
-} else {
     // Damage Vars
 _unit setVariable ["INF_faceDmg",0,false];
 _unit setVariable ["INF_neckDmg",0,false];
@@ -36,7 +27,7 @@ _unit setVariable ["INF_overallDmg",0,false];
 _unit removeAllEventHandlers "AnimChanged";
 _unit removeAllEventHandlers "HandleDamage";
 _unit removeAllEventHandlers "MPKilled";
-//_unit addEventHandler ["AnimChanged", {_this call INF_fnc_ForceSprint}]; // Laggy currently - needs some kind of work
+_unit addEventHandler ["AnimChanged", {_this call INF_fnc_ForceSprint}]; // Laggy currently - needs some kind of work
 _unit addEventHandler["HandleDamage",{_this call INF_fnc_HandleZomDamage}];
 _unit addMPEventHandler["MPKilled",{(_this select 0) removeAllEventHandlers "HandleDamage"; _this call INF_fnc_cleanUp;}];
 
@@ -49,7 +40,7 @@ _unit disableAI "COVER";
 
 
 //Increased Speed
-_unit setAnimSpeedCoef 2;
+_unit setAnimSpeedCoef 1.6;
 
 //Appearance
 _unit call INF_fnc_removeGear;
@@ -59,5 +50,8 @@ _unit setMimic "hurt";
 
 //Attack Scripts
 [_unit] spawn INF_fnc_trackSurvivor;
-[_unit] spawn INF_fnc_automatedAttack;  
+[_unit] spawn INF_fnc_automatedAttack;
+
+if (count _survivors <= 0) then {
+    publicVariableServer "INF_StartNewMatch";
 };

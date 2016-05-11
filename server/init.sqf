@@ -9,5 +9,5 @@
         }; 
 } forEach playableUnits;
 
-"INF_StartNewMatch" addPublicvariableEventHandler {call INF_fnc_matchHandler};
+"INF_StartNewMatch" addPublicVariableEventHandler {[] spawn INF_fnc_matchHandler};
 publicVariableServer "INF_StartNewMatch";

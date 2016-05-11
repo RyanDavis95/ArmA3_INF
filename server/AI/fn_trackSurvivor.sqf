@@ -16,6 +16,8 @@ if (count _survivors > 0) then {
         waitUntil { sleep .1; _timeDiff = serverTime - _time;
                     _survivors = missionNamespace getVariable "INF_CurrentSurvivors";  
                     if (count _survivors > 0) then {
+                        [] call INF_fnc_updateTeams;
+                        _survivors = missionNamespace getVariable "INF_CurrentSurvivors";
                         _newTarget = [_unit,_survivors] call INF_fnc_nearestUnit;
                     };
                     ((getPosATL _target) distance _targetPos) > 1 || _target != _newTarget || !alive _unit || !alive _target || _timeDiff > 1 

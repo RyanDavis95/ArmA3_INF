@@ -2,6 +2,9 @@ params ["_unit"];
 /* Setup Initial Client Variables */
 [_unit] call compile PreprocessFileLineNumbers "server\configuration.sqf";
 
+_unit removeAllEventHandlers "MPRespawn";
+_unit addMPEventHandler["MPRespawn",{_this spawn INF_fnc_findRespawnPoint; _this call INF_fnc_initAIZombie;}];
+
 switch (side _unit) do {
     
     case west: {
@@ -21,6 +24,3 @@ switch (side _unit) do {
             waitUntil { scriptDone _handle;};
     };
 };
-
-/* Setup Event Handlers */
-_unit addMPEventHandler["MPRespawn",{_this call INF_fnc_initAIZombie; _this call INF_fnc_findRespawnPoint;}];

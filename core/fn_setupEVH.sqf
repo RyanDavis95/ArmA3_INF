@@ -7,7 +7,7 @@ waitUntil { !isNull (findDisplay 46); };
 /* Background Music */
 addMusicEventHandler ["MusicStop",{[] call INF_fnc_playMusic}];
 
-/* Respawn as Zombie */
-player addMPEventHandler["MPRespawn",{_this call INF_fnc_initZombie; _this call INF_fnc_findRespawnPoint;}];
+player addMPEventHandler["MPRespawn",{[_this select 0] call INF_fnc_initZombie; [_this select 0] call INF_fnc_findRespawnPoint;}];
 
+/* HUD */
 addMissionEventHandler ["Draw3D",{_this call INF_fnc_hudUpdate}];

@@ -1,7 +1,7 @@
 private ["_survivors","_survivorPositions","_survPosCount","_survivorGroups","_tmpGroup"];
 params ["_unit"];
 
-[] call INF_fnc_getUnitTeams;
+[] call INF_fnc_updateTeams;
 _survivors = missionNamespace getVariable "INF_CurrentSurvivors";
 _zombies = missionNamespace getVariable "INF_CurrentZombies";
 
@@ -14,7 +14,8 @@ _tmpGroup = [];
 } forEach _survivors;
 
 {
-    if ((count _survivorPositions - 1) > 0) then {       
+    if ((count _survivorPositions - 1) > 0) then {
+        _survPosCount = count _survivorPositions - 1;    
         _tmpGroup pushBack _x;
         for "_i" from 1 to _survPosCount step 1 do {   
         _curr = _survivorPositions select _i;                     
@@ -41,7 +42,6 @@ if (count _survivorGroups > 0) then {
 
     _survPos = _survivorGroups select (round (random ((count _survivorGroups) - 1))) select 0;
     _genPos = [_survPos,[100,100]] call INF_fnc_generatePos;
-
     {
 
         if (_genPos distance (_x select 0) < 50 || surfaceIsWater _genPos) then {
@@ -49,6 +49,6 @@ if (count _survivorGroups > 0) then {
         };
     } forEach _survivorGroups;
   };
-  _unit setPosATL _genPos;
+  [_unit,_genPos, 0] call KK_fnc_setPosAGLS;
 };
 

@@ -1,6 +1,7 @@
 params ["_centerPos", "_area"];
 
-_xRand,_yRand = 0;  
+_xRand = 0;
+_yRand = 0;  
 
 _length = _area select 0;
 _width = _area select 1;

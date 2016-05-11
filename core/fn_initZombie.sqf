@@ -4,17 +4,10 @@ params ["_unit"];
 _eastCenter = createCenter Independent;
 _zomGroup = createGroup Independent;
 [_unit] joinSilent _zomGroup;
-
-
-/* Update Team Vars */
-call INF_fnc_getUnitTeams;
+call INF_fnc_updateTeams;
 _survivors = missionNamespace getVariable "INF_CurrentSurvivors";
-missionNamespace setVariable ["INF_CurrentSurvivors", _survivors - [_unit], true];
-_zombies = missionNamespace getVariable "INF_CurrentZombiesList";
-missionNamespace setVariable ["INF_CurrentZombiesList", _zombies pushBack _unit, true];
-
-
-// Damage Vars
+  
+  // Damage Vars
 _unit setVariable ["INF_faceDmg",0,false];
 _unit setVariable ["INF_neckDmg",0,false];
 _unit setVariable ["INF_headDmg",0,false];
@@ -32,7 +25,7 @@ _unit setVariable ["INF_overallDmg",0,false];
 
 _unit removeAllEventHandlers "HandleDamage";
 _unit removeAllEventHandlers "MPKilled";
-_unit addEventHandler["HandleDamage",{_this call INF_fnc_HandleZomDamage;}];    
+_unit addEventHandler["HandleDamage",{_this call INF_fnc_HandleZomDamage;}];
 _unit addMPEventHandler["MPKilled",{(_this select 0) removeAllEventHandlers "HandleDamage"; _this call INF_fnc_cleanUp;}];
 
 //Increased Speed
@@ -46,4 +39,8 @@ _unit setMimic "hurt";
 
 /* Perks and Abilities */
 _unit call INF_fnc_removePerks;
-_unit call INF_fnc_zomPerkHUD;
+_unit call INF_fnc_zomPerkHUD;  
+
+if (count _survivors <= 0) then {
+    publicVariableServer "INF_StartNewMatch";
+};

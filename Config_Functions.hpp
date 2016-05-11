@@ -21,7 +21,7 @@ class Infection_Client_Core
                         class keyDownHandler {};
                         class KeyUpHandler {};
                         class mouseHandler {};
-                        class getUnitTeams {};
+                        class updateTeams {};
                         class animSync {};
                         class cleanUp {};
                         class generatePos {};
