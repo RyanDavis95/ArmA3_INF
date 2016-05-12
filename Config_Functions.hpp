@@ -1,84 +1,101 @@
-class Infection_Client_Core
-{
+class Infection_Client_Core {
+    
       tag = "INF";
       
       
             class Core {
+                
                 file = "core";
-                class initZombie {};
+                
                 class initSurvivor {};
-                class setupEVH {};
-              
-            }
+                class initZombie {};             
+                class setupEVH {};             
+            };
       
             class Functions {
             
                         file = "core\functions";
-                        class removeGear {};
+                        
                         class ActionJump {};
+                        class animSync {};
                         class findRespawnPoint {};
-                        class playMusic {};
+                        class generatePos {};
+                        class getNearestEnemy {};
                         class keyDownHandler {};
                         class KeyUpHandler {};
                         class mouseHandler {};
-                        class updateTeams {};
-                        class animSync {};
-                        class cleanUp {};
-                        class generatePos {};
-                        
+                        class playMusic {};
+                        class removeGear {};
+                        class removeGlow {};
+                        class updateTeams {};            
             };
             
             class Survivors {
                         file = "core\survivors";
-                        class healSelf {};
-                        class layMine {};
-                        class speedBoost {};
-                        class spawnUAV {};
+                        
                         class handleSurvDamage {};
-                        class survPerkHUD {};     
+                        class healSelf {};                       
+                        class layMine {};
+                        class spawnUAV {};
+                        class speedBoost {};
+                        class survPerkHUD {};    
             };
             
             class Zombies {
+                
                       file = "core\zombies";
-                        class zombieAttack {};     
-                        class BloodEffects {};
-                        class handleZomDamage {};
-                        class spawnThunderbolt {};        
-                        class glowEffect {};
-                        class zomPerkHUD {};
+                      
+                      class BloodEffects {};
+                      class glowEffect {};
+                      class handleZomDamage {};
+                      class spawnThunderbolt {}; 
+                      class zombieAttack {};
+                      class zomPerkHUD {};                       
             };
             
-            class Server {
-                      file = "server";
-                      class initAI {};
-                      class initAISurvivor {};
-                      class initAIZombie {};
-                      class initAlphaZombie {};
+            class Dialog_Controls {
+                
+                      file = "dialog\functions";
                       
+                      class abilitiesUpdate {};  
+                      class abilityCooldown {};
+                      class hudSetup {};
+                      class hudUpdate {};
+                      class removePerks {};
+                      class scoreBoard {};   
             };
+            
+};
+
+class Infection_Server {
+    
+        tag = "INF_S";
             
             class AI {
                       file = "server\AI";
-                      class automatedAttack {};
-                      class trackSurvivor {}; 
-                      class forceSprint {};
+                      class AIzomAttack {}; // RF
+                      class forceSprint {}; // Outdated
+                      class smartZombies {};// RF
+                      class trackUnit {};   //RF   
             };
             
-            class ServerFunctions {
-                      file = "server\functions";
-                      class nearestUnit {};
-                      class getStartLoc {};
-                      class matchhandler {};
+            class functions {
+                file = "server\functions";
+                    class getSurvivors {};  // RF
+                    class getTeam {};
+                    class getZombies {};    // RF
+                    class setTeam {};
+                    class setupRelations {};// RF      
             };
             
-            class Dialog {
-                      file = "dialog\functions";
-                      class scoreBoard {};
-                      class hudSetup {};
-                      class hudUpdate {};   
-                      class abilitiesUpdate {};  
-                      class abilityCooldown {};
-                      class removePerks {};       
+            class session {
+                file = "server\session";
+                      class getStartLoc {}; // RF
+                      class initAlphaZom {};// RF
+                      class matchCleanUp {};// Unimplemented
+                      class startRound {};  // RF
+                      class zoneSpawn {};   // RF
+                         
             };
-            
+               
 };

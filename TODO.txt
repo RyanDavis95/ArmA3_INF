@@ -36,6 +36,3 @@ Maybe change vars over to Global Variables?
 Ragdoll Effects
 
 Sync Animations
-
-
-SOMETHING IS FUCKED NEED TO FIX HANG AND CRASH..?

@@ -1,3 +1,9 @@
+/*
+_centerPos = position to spawn around
+_area = [x,y] (length, Width) of spawn area
+
+return: generated random position
+*/
 params ["_centerPos", "_area"];
 
 _xRand = 0;

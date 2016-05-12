@@ -1,17 +1,24 @@
-private ["_tmpCurrentSurvivors", "_tmpCurrentZombies"];
-_tmpCurrentSurvivors = [];
-_tmpCurrentZombies = [];
+/*
+    Sets Team Public Variables
+    Returns [Survivors List, Zombies List]
+
+*/
+private ["_tmpSurvivors", "_tmpZombies"];
+_tmpSurvivors = [];
+_tmpZombies = [];
 
 {
     if (side _x == Independent) then {          
-        _tmpCurrentZombies pushBack _x;
+        _tmpZombies pushBack _x;
+        [_x,"ZOMBIE"] call INF_S_fnc_setTeam;
     } else {      
-        _tmpCurrentSurvivors pushBack _x;
-    };
-           
+        _tmpSurvivors pushBack _x;
+        [_x,"SURVIVOR"] call INF_S_fnc_setTeam;
+    };          
 } forEach playableUnits;
 
+missionNamespace setVariable ["INF_CurrentPlayers",_tmpSurvivors + _tmpZombies,true];
+missionNamespace setVariable ["INF_CurrentSurvivors",_tmpSurvivors,true];
+missionNamespace setVariable ["INF_CurrentZombies",_tmpZombies,true];
 
-missionNamespace setVariable ["INF_CurrentPlayers",_tmpCurrentSurvivors + _tmpCurrentZombies,true];
-missionNamespace setVariable ["INF_CurrentSurvivors",_tmpCurrentSurvivors,true];
-missionNamespace setVariable ["INF_CurrentZombies",_tmpCurrentZombies,true];
+[_tmpSurvivors,_tmpZombies]

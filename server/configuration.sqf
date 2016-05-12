@@ -1,15 +1,5 @@
-west setFriend [east, 1];
-west setFriend [independent, 0];
-west setFriend [civilian, 1];
+[] call INF_S_fnc_setupRelations;
 
-independent setFriend [west, 0];
-independent setFriend [east, 0];
-independent setFriend [civilian, 0];
-
-east setFriend [west, 1];
-east setFriend [independent, 0];
-east setFriend [civilian, 1];
-
-civilian setFriend [west, 1];
-civilian setFriend [east, 1];
-civilian setFriend [independent,0];
+missionNamespace setVariable ["INF_CurrentSurvivors",[],true];
+missionNamespace setVariable ["INF_CurrentZombies",[],true];
+missionNamespace setVariable ["INF_AlphaZombie","",true];

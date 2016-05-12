@@ -21,11 +21,18 @@ switch (playerSide) do {
     };
 };
 
-/* Setup Event Handlers */
-[] call INF_fnc_setupEVH;
-
-/* Start Background Music */
-[] call INF_fnc_playMusic;
-
-/* Setup Player HUD */
-[] call INF_fnc_hudSetup;
+if (hasInterface) then {
+        
+    /* Player Controls */
+    waitUntil { !isNull (findDisplay 46); };
+    (findDisplay 46) displayAddEventHandler ["KeyDown", {_this call INF_fnc_keyDownHandler;}];
+    (findDisplay 46) displayAddEventHandler ["KeyUp", {_this call INF_fnc_keyUpHandler;}];
+    (findDisplay 46) displayAddEventHandler ["MouseButtonDown", {_this call INF_fnc_mouseHandler; true;}];
+    
+    /* Setup Player HUD */
+    [] call INF_fnc_hudSetup;
+    addMissionEventHandler ["Draw3D",{_this call INF_fnc_hudUpdate}];
+    /* Background Music */
+    [] call INF_fnc_playMusic;
+    addMusicEventHandler ["MusicStop",{[] call INF_fnc_playMusic}];
+};
